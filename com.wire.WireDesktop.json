@@ -1,19 +1,19 @@
 {
   "app-id": "com.wire.WireDesktop",
   "base": "io.atom.electron.BaseApp",
-  "base-version": "stable",
-  "command": "/app/Wire/wire-desktop",
+  "base-version": "18.08",
+  "command": "wire-desktop.sh",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "18.08",
-  "separate-locales": false,
   "sdk": "org.freedesktop.Sdk",
+  "separate-locales": false,
   "rename-desktop-file": "wire-desktop.desktop",
   "rename-icon": "wire-desktop",
   "finish-args": [
     "--device=all",
     "--device=dri",
-    "--filesystem=home:ro",
-    "--filesystem=xdg-download",
+    "--filesystem=home",
+    "--persist=.pki",
     "--share=ipc",
     "--share=network",
     "--socket=pulseaudio",
@@ -23,24 +23,6 @@
     "--talk-name=org.freedesktop.secrets"
   ],
   "modules": [
-    {
-      "name": "libnotify",
-      "cleanup": [
-        "/bin"
-      ],
-      "config-opts": [
-        "--disable-introspection",
-        "--disable-static",
-        "--disable-tests"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "sha256": "9cb4ce315b2655860c524d46b56010874214ec27e854086c1a1d0260137efc04",
-          "url": "https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.7.tar.xz"
-        }
-      ]
-    },
     {
       "name": "libsecret",
       "cleanup": [
@@ -64,38 +46,45 @@
       ]
     },
     {
-      "name": "wire",
+      "name": "wire-desktop",
       "buildsystem": "simple",
       "build-commands": [
         "ar x wire_*.deb",
-        "tar xf data.tar.xz",
+        "tar -xf data.tar.xz",
         "rm -f control.tar.gz data.tar.xz debian-binary wire_*.deb",
         "cp -r opt/* usr/* /app",
-        "desktop-file-edit --remove-key=Version /app/share/applications/wire-desktop.desktop",
-        "desktop-file-edit --set-key=Exec --set-value='/app/Wire/wire-desktop %U' /app/share/applications/wire-desktop.desktop",
-        "install -Dm0644 -t /app/share/metainfo/ com.wire.WireDesktop.appdata.xml"
+        "install -Dm0755 -t /app/bin/ wire-desktop.sh",
+        "install -Dm0644 -t /app/share/metainfo/ com.wire.WireDesktop.appdata.xml",
+        "desktop-file-edit --set-key=Exec --set-value='/app/Wire/wire-desktop %u' /app/share/applications/wire-desktop.desktop"
       ],
       "sources": [
         {
           "type": "file",
           "only-arches": ["i386"],
-          "sha256": "0ba392aca71d85cce5465e1431eb6c35c8f0609e598c485cc67177a99827bc99",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/release/3.3.2872/wire_3.3.2872_i386.deb"
+          "sha256": "9780c8cc0cc97783fe769f947499f872851270daa29760ac0136904798335457",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/release/3.4.2879/wire_3.4.2879_i386.deb"
         },
         {
           "type": "file",
           "only-arches": ["x86_64"],
-          "sha256": "fca2cabdd934dca956525b60f97dd2712120499c7f10b10259fe4701439ada13",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/release/3.3.2872/wire_3.3.2872_amd64.deb"
+          "sha256": "2d95f2aa0eac6d55cbcc3851e39e708f310d229c75d5ea919767e1bd075f67b4",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/release/3.4.2879/wire_3.4.2879_amd64.deb"
         },
         {
           "type": "file",
-          "sha256": "35949658604dbd400f3d86925b5ef3754c1ead285324dd94d2d0ed1e2d485bc4",
-          "url": "https://github.com/wireapp/wire-desktop/archive/release/3.3.2872.tar.gz"
+          "sha256": "7f66588be58b3854609729e9531ba5693e13e090d8ec037bca73f013ea7dd4e9",
+          "url": "https://github.com/wireapp/wire-desktop/archive/release/3.4.2879.tar.gz"
         },
         {
           "type": "file",
           "path": "com.wire.WireDesktop.appdata.xml"
+        },
+        {
+          "type": "script",
+          "commands": [
+            "exec env /app/Wire/wire-desktop \"$@\""
+          ],
+          "dest-filename": "wire-desktop.sh"
         }
       ]
     }
