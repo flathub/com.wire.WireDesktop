@@ -13,9 +13,9 @@ $ cd com.wire.WireDesktop/
 $ flatpak-builder build --force-clean --install-deps-from=flathub --install --user com.wire.WireDesktop.json
 
 # ...and to clean-up everything
-$ flatpak uninstall --user com.wire.WireDesktop
+$ flatpak uninstall --delete-data --user com.wire.WireDesktop
+$ rm -rf .flatpak-builder/ build/
 $ flatpak uninstall --unused --user
-$ rm -Rf .flatpak-builder/ build/ ~/.var/app/com.wire.WireDesktop/
 ----
 
 == Roadmap

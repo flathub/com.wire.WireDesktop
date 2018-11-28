@@ -2,7 +2,7 @@
   "app-id": "com.wire.WireDesktop",
   "base": "io.atom.electron.BaseApp",
   "base-version": "18.08",
-  "command": "wire-desktop.sh",
+  "command": "wire-desktop",
   "runtime": "org.freedesktop.Platform",
   "runtime-version": "18.08",
   "sdk": "org.freedesktop.Sdk",
@@ -19,6 +19,7 @@
     "--socket=pulseaudio",
     "--socket=wayland",
     "--socket=x11",
+    "--talk-name=com.canonical.AppMenu.Registrar",
     "--talk-name=org.freedesktop.Notifications",
     "--talk-name=org.freedesktop.secrets"
   ],
@@ -49,13 +50,13 @@
       "name": "wire-desktop",
       "buildsystem": "simple",
       "build-commands": [
-        "ar x wire_*.deb",
+        "ar -x wire_*.deb",
         "tar -xf data.tar.xz",
         "rm -f control.tar.gz data.tar.xz debian-binary wire_*.deb",
         "cp -r opt/* usr/* /app",
-        "install -Dm0755 -t /app/bin/ wire-desktop.sh",
+        "install -Dm0755 wire-desktop.sh /app/bin/wire-desktop",
         "install -Dm0644 -t /app/share/metainfo/ com.wire.WireDesktop.appdata.xml",
-        "desktop-file-edit --set-key=Exec --set-value='/app/Wire/wire-desktop %u' /app/share/applications/wire-desktop.desktop"
+        "desktop-file-edit --set-key=Exec --set-value=\"/app/bin/wire-desktop %u\" /app/share/applications/wire-desktop.desktop"
       ],
       "sources": [
         {
