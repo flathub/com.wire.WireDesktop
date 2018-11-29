@@ -12,8 +12,8 @@
   "finish-args": [
     "--device=all",
     "--device=dri",
+    "--env=TMPDIR=/var/tmp",
     "--filesystem=home",
-    "--filesystem=/tmp",
     "--share=ipc",
     "--share=network",
     "--socket=pulseaudio",
@@ -83,7 +83,7 @@
         {
           "type": "script",
           "commands": [
-            "exec env TMPDIR=$XDG_CACHE_HOME /app/Wire/wire-desktop \"$@\""
+            "exec env /app/Wire/wire-desktop \"$@\""
           ],
           "dest-filename": "wire-desktop.sh"
         }
