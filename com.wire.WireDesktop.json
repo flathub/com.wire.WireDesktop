@@ -13,7 +13,7 @@
     "--device=all",
     "--device=dri",
     "--filesystem=home",
-    "--persist=.pki",
+    "--filesystem=/tmp",
     "--share=ipc",
     "--share=network",
     "--socket=pulseaudio",
@@ -83,7 +83,7 @@
         {
           "type": "script",
           "commands": [
-            "exec env /app/Wire/wire-desktop \"$@\""
+            "exec env TMPDIR=$XDG_CACHE_HOME /app/Wire/wire-desktop \"$@\""
           ],
           "dest-filename": "wire-desktop.sh"
         }
