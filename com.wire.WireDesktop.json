@@ -12,8 +12,8 @@
   "finish-args": [
     "--device=all",
     "--device=dri",
+    "--env=TMPDIR=/var/tmp",
     "--filesystem=home",
-    "--persist=.pki",
     "--share=ipc",
     "--share=network",
     "--socket=pulseaudio",
