@@ -83,7 +83,7 @@
         {
           "type": "script",
           "commands": [
-            "exec env /app/Wire/wire-desktop \"$@\""
+            "exec /app/Wire/wire-desktop \"$@\""
           ],
           "dest-filename": "wire-desktop.sh"
         }
