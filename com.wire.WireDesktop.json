@@ -61,19 +61,19 @@
         {
           "type": "file",
           "only-arches": ["i386"],
-          "sha256": "9780c8cc0cc97783fe769f947499f872851270daa29760ac0136904798335457",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/release/3.4.2879/wire_3.4.2879_i386.deb"
+          "sha256": "2dd49e94e80f6c58fd615933544b6f6cff6615f7c125a8f68cbafaa89932b268",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.5.2881/wire_3.5.2881_i386.deb"
         },
         {
           "type": "file",
           "only-arches": ["x86_64"],
-          "sha256": "2d95f2aa0eac6d55cbcc3851e39e708f310d229c75d5ea919767e1bd075f67b4",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/release/3.4.2879/wire_3.4.2879_amd64.deb"
+          "sha256": "719881099b5384b1c0f493f57fc45494991b3733cbbfe060954768de898e519f",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.5.2881/wire_3.5.2881_amd64.deb"
         },
         {
           "type": "file",
-          "sha256": "7f66588be58b3854609729e9531ba5693e13e090d8ec037bca73f013ea7dd4e9",
-          "url": "https://github.com/wireapp/wire-desktop/archive/release/3.4.2879.tar.gz"
+          "sha256": "4216cd9c3a2c4920aec2f3c967181b04bfafdb1b47e526a8e823911cce704da1",
+          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.5.2881.tar.gz"
         },
         {
           "type": "file",
@@ -82,7 +82,7 @@
         {
           "type": "script",
           "commands": [
-            "exec env TMPDIR=$XDG_CACHE_HOME/tmp /app/Wire/wire-desktop \"$@\""
+            "exec env TMPDIR=${XDG_CACHE_HOME}/tmp/ /app/Wire/wire-desktop \"$@\""
           ],
           "dest-filename": "wire-desktop.sh"
         }

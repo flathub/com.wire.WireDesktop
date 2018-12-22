@@ -30,6 +30,7 @@
   <developer_name>Wire Swiss GmbH</developer_name>
   <content_rating type="oars-1.1" />
   <releases>
+    <release type="stable" date="2018-12-21" version="3.5.2881" />
     <release type="stable" date="2018-11-23" version="3.4.2879" />
     <release type="stable" date="2018-09-17" version="3.3.2872" />
   </releases>
