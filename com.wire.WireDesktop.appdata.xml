@@ -4,7 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0</project_license>
   <name>Wire</name>
-  <summary>The most secure collaboration platform.</summary>
+  <summary>The most secure collaboration platform</summary>
   <description>
     <p>
       Business chats, one-click conference calls and shared documents – all protected with end-to-end encryption. Also
@@ -28,8 +28,10 @@
   </screenshots>
   <url type="homepage">https://wire.com/</url>
   <developer_name>Wire Swiss GmbH</developer_name>
+  <update_contact>info@wire.com</update_contact>
   <content_rating type="oars-1.1" />
   <releases>
+    <release type="stable" date="2019-02-18" version="3.6.2885" />
     <release type="stable" date="2018-12-21" version="3.5.2881" />
     <release type="stable" date="2018-11-23" version="3.4.2879" />
     <release type="stable" date="2018-09-17" version="3.3.2872" />
