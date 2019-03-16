@@ -49,30 +49,24 @@
       "name": "wire-desktop",
       "buildsystem": "simple",
       "build-commands": [
-        "ar -x Wire-3.6.2885*.deb",
+        "ar -x Wire-3.7.2891*.deb",
         "tar -xf data.tar.xz",
         "cp -r opt/* usr/* /app",
         "desktop-file-edit --set-key=Exec --set-value=\"/app/bin/wire-desktop %U\" /app/share/applications/wire-desktop.desktop",
         "install -D -m0755 wire-desktop.sh /app/bin/wire-desktop",
-        "install -D -m0644 -t /app/share/metainfo/ com.wire.WireDesktop.appdata.xml"
+        "install -D -m0644 -t /app/share/metainfo/ ${FLATPAK_ID}.appdata.xml"
       ],
       "sources": [
         {
           "type": "file",
-          "only-arches": ["i386"],
-          "sha256": "2851b3c19e94dc276e119bd336fbff453b2088a6507eb28e6c24fd64b67c42d2",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.6.2885/Wire-3.6.2885-i386.deb"
-        },
-        {
-          "type": "file",
           "only-arches": ["x86_64"],
-          "sha256": "3bedda4d8fb640c0f3a0f65a89258dfe788dc0e3d686db7ebe6a6ce4af4388b6",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.6.2885/Wire-3.6.2885-amd64.deb"
+          "sha256": "0c7f16c951b47c570d0f7ddea192a84552e0400e90043b20888aa77c73e89674",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.7.2891/Wire-3.7.2891_amd64.deb"
         },
         {
           "type": "file",
-          "sha256": "524db450d41a2dc677b8450cdf4e13dcc753280b2f6565ed5e23e6f59c14bed4",
-          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.6.2885.tar.gz"
+          "sha256": "162ebb6c8642edfd74fc02b494dbea912b727fadc91db93c137ee35e0e81dba5",
+          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.7.2891.tar.gz"
         },
         {
           "type": "file",
