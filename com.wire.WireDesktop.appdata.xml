@@ -31,6 +31,7 @@
   <update_contact>info@wire.com</update_contact>
   <content_rating type="oars-1.1" />
   <releases>
+    <release type="stable" date="2019-03-14" version="3.7.2891" />
     <release type="stable" date="2019-02-18" version="3.6.2885" />
     <release type="stable" date="2018-12-21" version="3.5.2881" />
     <release type="stable" date="2018-11-23" version="3.4.2879" />
