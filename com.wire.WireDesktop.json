@@ -49,7 +49,7 @@
       "name": "wire-desktop",
       "buildsystem": "simple",
       "build-commands": [
-        "ar -x Wire-3.7.2891*.deb",
+        "ar -x Wire-3.8.2894*.deb",
         "tar -xf data.tar.xz",
         "cp -r opt/* usr/* /app",
         "desktop-file-edit --set-key=Exec --set-value=\"/app/bin/wire-desktop %U\" /app/share/applications/wire-desktop.desktop",
@@ -60,13 +60,13 @@
         {
           "type": "file",
           "only-arches": ["x86_64"],
-          "sha256": "0c7f16c951b47c570d0f7ddea192a84552e0400e90043b20888aa77c73e89674",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.7.2891/Wire-3.7.2891_amd64.deb"
+          "sha256": "69053ed2df8f40226048f55a0d95359c5cd00bb739fce39d675685f49782ace8",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.8.2894/Wire-3.8.2894_amd64.deb"
         },
         {
           "type": "file",
-          "sha256": "162ebb6c8642edfd74fc02b494dbea912b727fadc91db93c137ee35e0e81dba5",
-          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.7.2891.tar.gz"
+          "sha256": "3def5aa10578bc8be33505377a16c9485e5d31aa370ee1d7eb39a9c78dc33e3d",
+          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.8.2894.tar.gz"
         },
         {
           "type": "file",
