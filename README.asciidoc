@@ -4,7 +4,8 @@
 {uri-wire-home}[Wire^] combines strong encryption, a rich feature set and ease-of-use in a single app.
 
 == Build, Install and Run Flatpak (locally)
-Assuming `flatpak` and `flatpak-builder` are installed, follow the next steps:
+
+Assuming `flatpak`, `flatpak-builder`, and `git` are installed, then execute the following commands:
 
 [source,shell]
 ----
@@ -17,7 +18,7 @@ $ flatpak-builder build --force-clean --install-deps-from=flathub --install --us
 $ flatpak uninstall --delete-data --user com.wire.WireDesktop
 
 # ...and to clean-up everything
-$ rm -rf .flatpak-builder/ build/
+$ rm --force --recursive .flatpak-builder/ build/
 $ flatpak uninstall --unused --user
 $ flatpak remote-delete --user flathub
 ----
