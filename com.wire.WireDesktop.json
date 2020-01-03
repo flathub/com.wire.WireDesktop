@@ -43,7 +43,7 @@
       "name": "wire-desktop",
       "buildsystem": "simple",
       "build-commands": [
-        "ar -o -x Wire-3.11.2912_amd64.deb",
+        "ar -o -x Wire_amd64.deb",
         "tar --extract --file=data.tar.xz",
         "cp --preserve --recursive opt/* usr/* /app",
         "desktop-file-edit --set-key=Exec --set-value=\"/app/bin/wire-desktop %U\" /app/share/applications/wire-desktop.desktop",
@@ -53,13 +53,14 @@
       "sources": [
         {
           "type": "file",
+          "dest-filename": "Wire_amd64.deb",
           "only-arches": ["x86_64"],
-          "sha256": "540fbe94161ea52e7406b8df94842eae4abe22707f5baab7680d94d346505cb4",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.11.2912/Wire-3.11.2912_amd64.deb"
+          "sha256": "5c6e0ce69a369712f755970ddc834617a8f064b72af3e7af5c574de32f1ba077",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.12.2916/Wire-3.12.2916_amd64.deb"
         }, {
           "type": "file",
-          "sha256": "41ddbf18e2581d7850a0d2cd22b5d2fcc07a778227e36280af55c5e72d7ee942",
-          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.11.2912.tar.gz"
+          "sha256": "2957063edf3784c4c456fe19ef32cfa106ebe3c7b8d211e11702f32ae66b8a3c",
+          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.12.2916.tar.gz"
         }, {
           "type": "file",
           "path": "entrypoint.sh"
