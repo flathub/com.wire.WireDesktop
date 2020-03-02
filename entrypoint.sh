@@ -2,7 +2,7 @@
 
 set -o errexit
 
-TMPDIR="${XDG_CACHE_HOME}"/tmp/
+TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
 export TMPDIR
 
-exec env /app/Wire/wire-desktop --no-sandbox "$@"
+exec zypak-wrapper /app/Wire/wire-desktop "$@"
