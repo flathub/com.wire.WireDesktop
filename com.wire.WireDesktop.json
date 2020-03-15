@@ -55,12 +55,12 @@
           "type": "file",
           "dest-filename": "Wire_amd64.deb",
           "only-arches": ["x86_64"],
-          "sha256": "5c6e0ce69a369712f755970ddc834617a8f064b72af3e7af5c574de32f1ba077",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.12.2916/Wire-3.12.2916_amd64.deb"
+          "sha256": "78a43333570f90066c428ad09171313c938f72dddd9a91a97ad7d585a233210c",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/wrapper_linux_production/3.15.2922/Wire-3.15.2922_amd64.deb"
         }, {
           "type": "file",
-          "sha256": "2957063edf3784c4c456fe19ef32cfa106ebe3c7b8d211e11702f32ae66b8a3c",
-          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.12.2916.tar.gz"
+          "sha256": "36f2e224813839095e194172a7d7258a7a20c5ef5d82bf77a8151b2a122405c5",
+          "url": "https://github.com/wireapp/wire-desktop/archive/wrapper_linux_production/3.15.2922.tar.gz"
         }, {
           "type": "file",
           "path": "entrypoint.sh"
