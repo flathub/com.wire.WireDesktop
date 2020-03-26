@@ -23,23 +23,8 @@
     "--talk-name=org.freedesktop.secrets"
   ],
   "modules": [
+    "shared-modules/libsecret/libsecret.json",
     {
-      "name": "libsecret",
-      "buildsystem": "meson",
-      "config-opts": [
-        "-Dgtk_doc=false",
-        "-Dmanpage=false",
-        "-Dvapi=false"
-      ],
-      "sources": [
-        {
-          "type": "git",
-          "commit": "f576dfbe50f9aed22802ad0db0356d081f467d7a",
-          "tag": "0.19.1",
-          "url": "https://gitlab.gnome.org/GNOME/libsecret.git"
-        }
-      ]
-    }, {
       "name": "wire-desktop",
       "buildsystem": "simple",
       "build-commands": [
@@ -48,25 +33,25 @@
         "cp --preserve --recursive opt/* usr/* /app",
         "desktop-file-edit --set-key=Exec --set-value=\"/app/bin/wire-desktop %U\" /app/share/applications/wire-desktop.desktop",
         "install -D --mode=0755 entrypoint.sh /app/bin/wire-desktop",
-        "install -D --mode=0644 --target-directory=/app/share/metainfo/ com.wire.WireDesktop.appdata.xml"
+        "install -D --mode=0644 --target-directory=/app/share/metainfo/ com.wire.WireDesktop.metainfo.xml"
       ],
       "sources": [
         {
           "type": "file",
           "dest-filename": "Wire_amd64.deb",
           "only-arches": ["x86_64"],
-          "sha256": "78a43333570f90066c428ad09171313c938f72dddd9a91a97ad7d585a233210c",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/wrapper_linux_production/3.15.2922/Wire-3.15.2922_amd64.deb"
+          "sha256": "ff6a4f49e8243c8d8a82cd7d465e16455a80a80ab213e0e9d6dd3ef134ad1231",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.16.2923/Wire-3.16.2923_amd64.deb"
         }, {
           "type": "file",
-          "sha256": "36f2e224813839095e194172a7d7258a7a20c5ef5d82bf77a8151b2a122405c5",
-          "url": "https://github.com/wireapp/wire-desktop/archive/wrapper_linux_production/3.15.2922.tar.gz"
+          "sha256": "c7f7d75b3c6a212c4a452a17c726b8605f39a59926d3454a38e7a303a2ed9d5c",
+          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.16.2923.tar.gz"
         }, {
           "type": "file",
           "path": "entrypoint.sh"
         }, {
           "type": "file",
-          "path": "com.wire.WireDesktop.appdata.xml"
+          "path": "com.wire.WireDesktop.metainfo.xml"
         }
       ]
     }
