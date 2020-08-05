@@ -2,7 +2,7 @@
 
 set -o errexit
 
-TMPDIR="$XDG_RUNTIME_DIR/app/$FLATPAK_ID"
+TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
 export TMPDIR
 
 exec zypak-wrapper /app/Wire/wire-desktop "$@"

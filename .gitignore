@@ -4,10 +4,13 @@
 .idea/
 build/
 
+.classpath
 .DS_Store
+.project
 Thumbs.db
 *.iml
-
+*.ipr
+*.iws
 
 #
 # Includes
