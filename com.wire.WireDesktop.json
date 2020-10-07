@@ -40,12 +40,12 @@
           "type": "file",
           "dest-filename": "Wire_amd64.deb",
           "only-arches": ["x86_64"],
-          "sha256": "a7df968a17cdd6962b040c6709f6215e75eadcc543a0d9d564453a9c8a0c100d",
-          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.19.2928/Wire-3.19.2928_amd64.deb"
+          "sha256": "a7b386c0a60d6a61a3f8c216a20dea4e4cd8025db92fc9f5a03667983fccdb7c",
+          "url": "https://github.com/wireapp/wire-desktop/releases/download/linux/3.20.2934/Wire-3.20.2934_amd64.deb"
         }, {
           "type": "file",
-          "sha256": "c019496117ec6fb9eb55fda5ee0349234d8bda3abe61df91cceac6b6205e9005",
-          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.19.2928.tar.gz"
+          "sha256": "e48b52a1c56e21414e75f007b1d949c752843c549f598bb86eb029d056f55c84",
+          "url": "https://github.com/wireapp/wire-desktop/archive/linux/3.20.2934.tar.gz"
         }, {
           "type": "file",
           "path": "entrypoint.sh"
