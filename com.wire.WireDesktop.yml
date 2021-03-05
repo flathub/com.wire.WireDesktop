@@ -38,11 +38,11 @@ modules:
         dest-filename: Wire_amd64.deb
         only-arches:
           - x86_64
-        sha256: a6f9510f2c0f5333fccd752590a974a123703acdf4467407aecd853f2d01680c
-        url: https://github.com/wireapp/wire-desktop/releases/download/linux/3.21.2936/Wire-3.21.2936_amd64.deb
+        sha256: 67310919c14b8b3410f36dd3b44e7792d88c22fab95f066a456d4ef6b26e82de
+        url: https://github.com/wireapp/wire-desktop/releases/download/linux/3.22.2937/Wire-3.22.2937_amd64.deb
       - type: file
-        sha256: 6130441f156207af0ad0b4a8b2e40de9c1ec2736c86407c26d3893e4019ef8b5
-        url: https://github.com/wireapp/wire-desktop/archive/linux/3.21.2936.tar.gz
+        sha256: 5d1e4bef658fa5f3bf37c8a471bd95e3ef1ba7a902d902b3d013544d190126f1
+        url: https://github.com/wireapp/wire-desktop/archive/linux/3.22.2937.tar.gz
       - type: file
         path: com.wire.WireDesktop.metainfo.xml
       - type: file
