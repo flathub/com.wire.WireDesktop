@@ -27,7 +27,7 @@ modules:
   - name: wire-desktop
     buildsystem: simple
     build-commands:
-      - ar -o -x Wire_amd64.deb
+      - ar -o -x wire_desktop.deb
       - tar --extract --file=data.tar.xz
       - cp --preserve --recursive opt/* usr/* /app
       - desktop-file-edit --set-key=Exec --set-value="/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
@@ -35,14 +35,14 @@ modules:
       - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.wire.WireDesktop.metainfo.xml
     sources:
       - type: file
-        dest-filename: Wire_amd64.deb
+        dest-filename: wire_desktop.deb
         only-arches:
           - x86_64
-        sha256: b73cacb813cbb226737ab70166c615785fa257dec52ba676dad8ba922f2a36cd
-        url: https://github.com/wireapp/wire-desktop/releases/download/linux/3.24.2939/Wire-3.24.2939_amd64.deb
+        sha256: e877a3e7f810cda94d627fb85b3d371c007838444d8c36520057ca08917762ed
+        url: https://github.com/wireapp/wire-desktop/releases/download/linux/3.25.2940/Wire-3.25.2940_amd64.deb
       - type: file
-        sha256: 69e70d39286f29b2fb186da30ec828be0a30329c457e829111b863223ed64127
-        url: https://github.com/wireapp/wire-desktop/archive/refs/tags/linux/3.24.2939.tar.gz
+        sha256: d1702bb64692b3970c2b49be4621069e7ea40b367be0917632cec50e123e570c
+        url: https://github.com/wireapp/wire-desktop/archive/refs/tags/linux/3.25.2940.tar.gz
       - type: file
         path: com.wire.WireDesktop.metainfo.xml
       - type: file
