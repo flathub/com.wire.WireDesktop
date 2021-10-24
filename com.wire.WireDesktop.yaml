@@ -1,12 +1,11 @@
----
 app-id: com.wire.WireDesktop
 base: org.electronjs.Electron2.BaseApp
-base-version: "21.08"
+base-version: '21.08'
 command: wire-desktop
 rename-desktop-file: wire-desktop.desktop
 rename-icon: wire-desktop
 runtime: org.freedesktop.Platform
-runtime-version: "21.08"
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args:
@@ -39,7 +38,7 @@ modules:
         only-arches:
           - x86_64
         sha256: 893df9faf7cbe9d2d463c5cebe0f539f42e3d457e2f80bcf55853f901f41fe05
-        url: https://wire-app.wire.com/linux/Wire-3.26.2941_amd64.deb
+        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.26.2941_amd64.deb
         x-checker-data:
           component: main
           dist: stable
