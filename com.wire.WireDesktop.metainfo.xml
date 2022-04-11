@@ -32,6 +32,7 @@
   <update_contact>info@wire.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="3.27.2943-2943" date="2022-04-11"/>
     <release version="3.26.2941-2941" date="2021-06-28"/>
     <release date="2021-06-28" version="3.26.2941"/>
   </releases>

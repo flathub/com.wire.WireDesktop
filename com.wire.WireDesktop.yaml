@@ -37,8 +37,8 @@ modules:
         dest-filename: wire_desktop_amd64.deb
         only-arches:
           - x86_64
-        sha256: 893df9faf7cbe9d2d463c5cebe0f539f42e3d457e2f80bcf55853f901f41fe05
-        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.26.2941_amd64.deb
+        sha256: e265656a0ebc23c29d0802e12a3902846d6a11bb372faab4ae2c262b0a0362d7
+        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.27.2943_amd64.deb
         x-checker-data:
           component: main
           dist: stable
