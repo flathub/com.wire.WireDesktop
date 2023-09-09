@@ -1,36 +1,36 @@
 app-id: com.wire.WireDesktop
+
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+
+base-version: '23.08'
+
 command: wire-desktop
-rename-desktop-file: wire-desktop.desktop
-rename-icon: wire-desktop
-runtime: org.freedesktop.Platform
-runtime-version: '22.08'
-sdk: org.freedesktop.Sdk
-separate-locales: false
+
 finish-args:
   - --device=all
   - --filesystem=home
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
+  - --socket=wayland
   - --socket=x11
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.portal.Fcitx
   - --talk-name=org.freedesktop.secrets
+
 modules:
   - shared-modules/libsecret/libsecret.json
 
   - name: wire-desktop
-    buildsystem: simple
     build-commands:
       - ar -o -x wire_desktop_amd64.deb
       - tar --extract --file=data.tar.xz
       - cp --preserve --recursive opt/* usr/* /app
       - desktop-file-edit --set-key=Exec --set-value="/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
       - install -D --mode=0755 entrypoint.sh /app/bin/wire-desktop
-      - install -D --mode=0644 --target-directory=/app/share/metainfo/ com.wire.WireDesktop.metainfo.xml
+      - install -D --mode=0644 --target-directory=/app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
+    buildsystem: simple
     sources:
       - type: file
         dest-filename: wire_desktop_amd64.deb
@@ -48,3 +48,15 @@ modules:
         path: com.wire.WireDesktop.metainfo.xml
       - type: file
         path: entrypoint.sh
+
+rename-desktop-file: wire-desktop.desktop
+
+rename-icon: wire-desktop
+
+runtime: org.freedesktop.Platform
+
+runtime-version: '23.08'
+
+sdk: org.freedesktop.Sdk
+
+separate-locales: false
