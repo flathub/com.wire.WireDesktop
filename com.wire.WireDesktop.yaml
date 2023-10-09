@@ -19,22 +19,28 @@ finish-args:
   - --talk-name=org.freedesktop.secrets
 
 modules:
+  # -----------------------------------------------------------------------------------------------
+  #   D E P E N D E N C I E S
+  # -----------------------------------------------------------------------------------------------
+
   - shared-modules/libsecret/libsecret.json
+
+  # -----------------------------------------------------------------------------------------------
+  #
+  # -----------------------------------------------------------------------------------------------
 
   - name: wire-desktop
     build-commands:
-      - ar -o -x wire_desktop_amd64.deb
-      - tar --extract --file=data.tar.xz
+      - ar -o -x wire-desktop.deb
+      - tar --extract --file data.tar.xz
       - cp --preserve --recursive opt/* usr/* /app
-      - desktop-file-edit --set-key=Exec --set-value="/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
-      - install -D --mode=0755 entrypoint.sh /app/bin/wire-desktop
-      - install -D --mode=0644 --target-directory=/app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
+      - desktop-file-edit --set-key Exec --set-value "/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
+      - install -D --mode 0755 entrypoint.sh /app/bin/wire-desktop
+      - install -D --mode 0644 --target-directory /app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
     buildsystem: simple
     sources:
       - type: file
-        dest-filename: wire_desktop_amd64.deb
-        only-arches:
-          - x86_64
+        dest-filename: wire-desktop.deb
         sha256: fb86918acd78d5cb48e7406d0708a9a15b4fa0c191b3cd8436a67ecb66652f9f
         url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.32.3079_amd64.deb
         x-checker-data:
