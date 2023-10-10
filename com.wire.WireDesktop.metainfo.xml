@@ -32,16 +32,6 @@
   <update_contact>info@wire.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="3.32.3079-3079" date="2023-10-06"/>
-    <release version="3.31.3060-3060" date="2023-05-16"/>
-    <release version="3.30.3018-3018" date="2022-12-23"/>
-    <release version="3.30.3016-3016" date="2022-12-19"/>
-    <release version="3.29.3004-3004" date="2022-11-03"/>
-    <release version="3.29.2997-2997" date="2022-10-12"/>
-    <release version="3.28.2946-2946" date="2022-07-13"/>
-    <release version="3.27.2944-2944" date="2022-04-11"/>
-    <release version="3.27.2943-2943" date="2022-04-11"/>
-    <release version="3.26.2941-2941" date="2021-06-28"/>
-    <release date="2021-06-28" version="3.26.2941"/>
+    <release version="3.32.3079-3079" date="2023-10-06" />
   </releases>
 </component>
