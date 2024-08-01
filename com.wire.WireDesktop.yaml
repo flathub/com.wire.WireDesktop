@@ -40,8 +40,8 @@ modules:
     sources:
       - type: file
         dest-filename: wire-desktop.deb
-        sha256: 2ad0d4b80cc3e77985274fb2cb0a74436fe1c7d306b0e8458d12d6b1901dfa1d
-        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.35.3348_amd64.deb
+        sha256: b655f5e404f83dcae60f65676bdf531aaa346fff31bf660e02dd37682a927978
+        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.36.3462_amd64.deb
         x-checker-data:
           component: main
           dist: stable
