@@ -1,11 +1,7 @@
 app-id: com.wire.WireDesktop
-
 base: org.electronjs.Electron2.BaseApp
-
 base-version: '23.08'
-
 command: wire-desktop
-
 finish-args:
   - --device=all
   - --filesystem=home
@@ -16,18 +12,8 @@ finish-args:
   - --socket=x11
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.secrets
-
 modules:
-  # -----------------------------------------------------------------------------------------------
-  #   D E P E N D E N C I E S
-  # -----------------------------------------------------------------------------------------------
-
   - shared-modules/libsecret/libsecret.json
-
-  # -----------------------------------------------------------------------------------------------
-  #
-  # -----------------------------------------------------------------------------------------------
-
   - name: wire-desktop
     build-commands:
       - ar -o -x wire-desktop.deb
@@ -39,6 +25,8 @@ modules:
     buildsystem: simple
     sources:
       - type: file
+        path: com.wire.WireDesktop.metainfo.xml
+      - type: file
         dest-filename: wire-desktop.deb
         sha256: b655f5e404f83dcae60f65676bdf531aaa346fff31bf660e02dd37682a927978
         url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.36.3462_amd64.deb
@@ -48,19 +36,13 @@ modules:
           package-name: wire-desktop
           root: https://wire-app.wire.com/linux/debian
           type: debian-repo
-      - type: file
-        path: com.wire.WireDesktop.metainfo.xml
-      - type: file
-        path: entrypoint.sh
-
+      - type: script
+        commands:
+          - exec zypak-wrapper /app/Wire/wire-desktop "$@"
+        dest-filename: entrypoint.sh
 rename-desktop-file: wire-desktop.desktop
-
 rename-icon: wire-desktop
-
 runtime: org.freedesktop.Platform
-
 runtime-version: '23.08'
-
 sdk: org.freedesktop.Sdk
-
 separate-locales: false

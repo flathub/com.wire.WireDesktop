@@ -27,17 +27,11 @@
     </screenshot>
   </screenshots>
   <url type="bugtracker">https://github.com/wireapp/wire-desktop/issues/</url>
-  <url type="homepage">https://wire.com/</url>
+  <url type="homepage">https://wire.com</url>
   <developer_name>Wire Swiss GmbH</developer_name>
   <update_contact>info@wire.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
-    <release version="3.36.3462-3462" date="2024-08-01">
-      <description></description>
-    </release>
-    <release version="3.35.3348-3348" date="2024-04-08"/>
-    <release version="3.34.3307-3307" date="2024-03-11"/>
-    <release version="3.34.3196-3196" date="2023-12-11"/>
-    <release version="3.32.3079-3079" date="2023-10-06"/>
+    <release version="3.36.3462-3462" date="2024-08-01" />
   </releases>
 </component>
