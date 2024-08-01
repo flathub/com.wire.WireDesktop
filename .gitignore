@@ -1,9 +1,15 @@
 #
 # Excludes
+
 .flatpak-builder/
+.fleet/
 .idea/
+.settings/
+.vscode/
+.zed/
 build/
 
+.DS_Store
 .classpath
 .DS_Store
 .project
@@ -11,6 +17,10 @@ Thumbs.db
 *.iml
 *.ipr
 *.iws
+*.log
+*.tar
+*.tgz
+*.zip
 
 #
 # Includes

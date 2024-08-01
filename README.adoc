@@ -1,5 +1,5 @@
 = Wire Desktop
-:uri-wire-home: https://wire.com/
+:uri-wire-home: https://wire.com
 
 {uri-wire-home}[Wire^] combines strong encryption, a rich feature set and ease-of-use in a single app.
 
@@ -7,12 +7,12 @@
 
 Assuming `flatpak`, `flatpak-builder`, and `git` are installed, execute the following commands:
 
-[source,shell]
+[source,shellscript]
 ----
 $ git clone https://github.com/flathub/com.wire.WireDesktop.git
 $ cd com.wire.WireDesktop/
 $ flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
-$ flatpak-builder build --force-clean --install-deps-from=flathub --install --user com.wire.WireDesktop.yml
+$ flatpak-builder build --force-clean --install-deps-from=flathub --install --user com.wire.WireDesktop.yaml
 
 # ...to uninstall the artifact
 $ flatpak uninstall --delete-data --user com.wire.WireDesktop
