@@ -1,19 +1,20 @@
 app-id: com.wire.WireDesktop
 base: org.electronjs.Electron2.BaseApp
-base-version: '23.08'
+base-version: "24.08"
 command: wire-desktop
 finish-args:
   - --device=all
   - --filesystem=home
+  - --filesystem=xdg-run/pipewire-0:ro
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
-  - --socket=wayland
   - --socket=x11
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.secrets
 modules:
   - shared-modules/libsecret/libsecret.json
+
   - name: wire-desktop
     build-commands:
       - ar -o -x wire-desktop.deb
@@ -43,6 +44,6 @@ modules:
 rename-desktop-file: wire-desktop.desktop
 rename-icon: wire-desktop
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 separate-locales: false
