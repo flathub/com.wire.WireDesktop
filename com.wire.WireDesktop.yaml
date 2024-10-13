@@ -5,7 +5,7 @@ command: wire-desktop
 finish-args:
   - --device=all
   - --filesystem=home
-  - --filesystem=xdg-run/pipewire-0:ro
+  - --filesystem=xdg-run/pipewire-0
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
@@ -13,8 +13,6 @@ finish-args:
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.secrets
 modules:
-  - shared-modules/libsecret/libsecret.json
-
   - name: wire-desktop
     build-commands:
       - ar -o -x wire-desktop.deb
