@@ -27,8 +27,8 @@ modules:
         path: com.wire.WireDesktop.metainfo.xml
       - type: file
         dest-filename: wire-desktop.deb
-        sha256: 25b26307a80f9a17634733c6210bbd8e85a308e9ea0da2edee2206f1e7623004
-        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.38.3638_amd64.deb
+        sha256: 05b63eedf180596e4247fcf819ea0197968e7b0091b96cd08e9417e31d6bce5b
+        url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.39.3653_amd64.deb
         x-checker-data:
           component: main
           dist: stable
