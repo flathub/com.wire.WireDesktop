@@ -4,7 +4,10 @@ base-version: '24.08'
 command: wire-desktop
 finish-args:
   - --device=all
+  - --env=WIRE_SECRET_STORE=unknown
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --filesystem=home
+  - --filesystem=xdg-run/keyring
   - --filesystem=xdg-run/pipewire-0
   - --share=ipc
   - --share=network
@@ -13,6 +16,29 @@ finish-args:
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.secrets
 modules:
+  - name: libsecret
+    buildsystem: meson
+    cleanup:
+      - /bin
+      - /include
+      - /lib/pkgconfig
+      - /share/man
+    config-opts:
+      - -Dbash_completion=disabled
+      - -Dcrypto=disabled
+      - -Dgtk_doc=false
+      - -Dintrospection=false
+      - -Dmanpage=false
+      - -Dvapi=false
+    sources:
+      - type: archive
+        sha256: 6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e
+        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz
+        x-checker-data:
+          project-id: 13150
+          type: anitya
+          url-template: https://download.gnome.org/sources/libsecret/$major.$minor/libsecret-$version.tar.xz
+
   - name: wire-desktop
     build-commands:
       - ar -o -x wire-desktop.deb
@@ -26,6 +52,8 @@ modules:
       - type: file
         path: com.wire.WireDesktop.metainfo.xml
       - type: file
+        path: entrypoint.sh
+      - type: file
         dest-filename: wire-desktop.deb
         sha256: 05b63eedf180596e4247fcf819ea0197968e7b0091b96cd08e9417e31d6bce5b
         url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.39.3653_amd64.deb
@@ -35,10 +63,6 @@ modules:
           package-name: wire-desktop
           root: https://wire-app.wire.com/linux/debian
           type: debian-repo
-      - type: script
-        commands:
-          - exec zypak-wrapper /app/Wire/wire-desktop "$@"
-        dest-filename: entrypoint.sh
 rename-desktop-file: wire-desktop.desktop
 rename-icon: wire-desktop
 runtime: org.freedesktop.Platform
