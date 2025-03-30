@@ -6,7 +6,6 @@ finish-args:
   - --device=all
   - --device=dri
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
-  - --filesystem=home
   - --filesystem=xdg-run/keyring
   - --filesystem=xdg-run/pipewire-0
   - --share=ipc
