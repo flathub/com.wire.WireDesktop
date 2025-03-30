@@ -4,15 +4,14 @@ base-version: "24.08"
 command: wire-desktop
 finish-args:
   - --device=all
-  - --device=dri
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --filesystem=xdg-run/keyring
   - --filesystem=xdg-run/pipewire-0
+  - --socket=fallback-x11
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
   - --socket=wayland
-  - --socket=x11
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.secrets
 modules:
