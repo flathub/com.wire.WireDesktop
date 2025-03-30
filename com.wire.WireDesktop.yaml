@@ -1,10 +1,10 @@
 app-id: com.wire.WireDesktop
 base: org.electronjs.Electron2.BaseApp
-base-version: '24.08'
+base-version: "24.08"
 command: wire-desktop
 finish-args:
   - --device=all
-  - --env=WIRE_SECRET_STORE=unknown
+  - --device=dri
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --filesystem=home
   - --filesystem=xdg-run/keyring
@@ -12,41 +12,19 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
+  - --socket=wayland
   - --socket=x11
   - --talk-name=com.canonical.AppMenu.Registrar
   - --talk-name=org.freedesktop.secrets
 modules:
-  - name: libsecret
-    buildsystem: meson
-    cleanup:
-      - /bin
-      - /include
-      - /lib/pkgconfig
-      - /share/man
-    config-opts:
-      - -Dbash_completion=disabled
-      - -Dcrypto=disabled
-      - -Dgtk_doc=false
-      - -Dintrospection=false
-      - -Dmanpage=false
-      - -Dvapi=false
-    sources:
-      - type: archive
-        sha256: 6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e
-        url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz
-        x-checker-data:
-          project-id: 13150
-          type: anitya
-          url-template: https://download.gnome.org/sources/libsecret/$major.$minor/libsecret-$version.tar.xz
-
   - name: wire-desktop
     build-commands:
       - ar -o -x wire-desktop.deb
-      - tar --extract --file data.tar.xz
-      - cp --preserve --recursive opt/* usr/* /app
-      - desktop-file-edit --set-key Exec --set-value "/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
-      - install -D --mode 0755 entrypoint.sh /app/bin/wire-desktop
-      - install -D --mode 0644 --target-directory /app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
+      - tar --extract --file=data.tar.xz
+      - cp --archive --target-directory=/app opt/* usr/*
+      - desktop-file-edit --set-key=Exec --set-value="/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
+      - install -D --mode=0755 entrypoint.sh /app/bin/wire-desktop
+      - install -D --mode=0644 --target-directory=/app/share/metainfo ${FLATPAK_ID}.metainfo.xml
     buildsystem: simple
     sources:
       - type: file
@@ -66,6 +44,6 @@ modules:
 rename-desktop-file: wire-desktop.desktop
 rename-icon: wire-desktop
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 separate-locales: false
