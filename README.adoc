@@ -22,13 +22,3 @@ $ rm --force --recursive .flatpak-builder/ build/
 $ flatpak uninstall --unused --user
 $ flatpak remote-delete --user flathub
 ----
-
-== Grant Access to System's Keychain
-:uri-electronjs-safe-storage: https://www.electronjs.org/docs/latest/api/safe-storage/#safestoragegetselectedstoragebackend-linux
-:uri-wire-wiki-grant-access-to-system-keychain: https://github.com/wireapp/wire-desktop/wiki/Grant-access-to-system's-keychain-(Linux)/
-
-With the introduction of Electron's `safeStorage`, Wire requires access to your {uri-wire-wiki-grant-access-to-system-keychain}[system's keychain^].
-
-Ensure that your desktop environment has a compatible keychain supported by Electron.
-Then set the `WIRE_SECRET_STORE` environment variable to {uri-wire-wiki-grant-access-to-system-keychain}[specify which keychain^] to use.
-This will ensure that the `--password-store` argument is set correctly.
