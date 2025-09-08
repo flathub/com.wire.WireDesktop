@@ -1,6 +1,6 @@
 app-id: com.wire.WireDesktop
 base: org.electronjs.Electron2.BaseApp
-base-version: '24.08'
+base-version: "25.08"
 command: wire-desktop
 finish-args:
   - --device=all
@@ -42,6 +42,6 @@ modules:
 rename-desktop-file: wire-desktop.desktop
 rename-icon: wire-desktop
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 separate-locales: false
