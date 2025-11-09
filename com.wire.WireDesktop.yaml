@@ -17,12 +17,12 @@ finish-args:
 modules:
   - name: wire-desktop
     build-commands:
-      - ar -o -x wire-desktop.deb
-      - tar --extract --file=data.tar.xz
-      - cp --archive --target-directory=/app opt/* usr/*
+      - bsdtar -x -f wire-desktop.deb data.tar.xz
+      - bsdtar -C /app -x -f data.tar.xz --strip-components=3 opt/Wire/
+      - bsdtar -C /app -x -f data.tar.xz --strip-components=2 usr/share/
       - desktop-file-edit --set-key=Exec --set-value="/app/bin/wire-desktop %U" /app/share/applications/wire-desktop.desktop
-      - install -D --mode=0755 entrypoint.sh /app/bin/wire-desktop
-      - install -D --mode=0644 --target-directory=/app/share/metainfo ${FLATPAK_ID}.metainfo.xml
+      - install -D -m 755 entrypoint.sh /app/bin/wire-desktop
+      - install -D -m 644 -t /app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
     buildsystem: simple
     sources:
       - type: file
