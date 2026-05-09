@@ -7,9 +7,9 @@ finish-args:
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --filesystem=xdg-run/keyring
   - --filesystem=xdg-run/pipewire-0
-  - --socket=fallback-x11
   - --share=ipc
   - --share=network
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=wayland
   - --talk-name=com.canonical.AppMenu.Registrar
@@ -31,6 +31,8 @@ modules:
         path: entrypoint.sh
       - type: file
         dest-filename: wire-desktop.deb
+        only-arches:
+          - x86_64
         sha256: f1c6466ce9e04342dc51d09c6a57b1905da71036febb7234cea11b45ffec462c
         url: https://wire-app.wire.com/linux/debian/pool/main/Wire-3.40.3882_amd64.deb
         x-checker-data:
