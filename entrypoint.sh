@@ -9,6 +9,8 @@ if [[ -n "${FLATPAK_ID:-}" && -n "${XDG_RUNTIME_DIR:-}" ]]; then
 fi
 
 if [[ "${XDG_SESSION_TYPE:-}" == "wayland" ]]; then
+  # TODO: Rework this when application upgrades to Electron 38
+  ADDITIONAL_ARGS+=("--enable-features=UseOzonePlatform")
   ADDITIONAL_ARGS+=("--enable-wayland-ime")
   ADDITIONAL_ARGS+=("--ozone-platform-hint=auto")
   ADDITIONAL_ARGS+=("--wayland-text-input-version=3")
